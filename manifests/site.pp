@@ -84,8 +84,23 @@ node default {
     ]:
   }
 
-  file { "${boxen::config::srcdir}/our-boxen":
-    ensure => link,
-    target => $boxen::config::repodir
-  }
+  #file { "${boxen::config::srcdir}/our-boxen":
+  #  ensure => link,
+  #  target => $boxen::config::repodir
+  #}
+
+  include iterm2::dev
+  include sequel_pro
+  include skype
+  include onepassword
+  include transmit
+  include dropbox
+  include redis
+  include chrome
+  include mysql
+  include elasticsearch
+  include zsh
+  include hipchat
+  include textexpander
+  include droplr
 }
