@@ -11,6 +11,7 @@ class people::fredoliveira {
   include hipchat
   include sublime_text_3
   include source_code_pro
+  include notational_velocity::nvalt
 
   include zsh
   include prezto
@@ -55,6 +56,10 @@ class people::fredoliveira {
   }
 
   # ------- sublime text setup -------
+
+  sublime_text_3::package { 'Package Control':
+    source => 'wbond/sublime_package_control'
+  }
 
   sublime_text_3::package { 'Theme - Soda':
     source => 'buymeasoda/soda-theme'
