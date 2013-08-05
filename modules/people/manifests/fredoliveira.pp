@@ -51,4 +51,10 @@ class people::fredoliveira {
     target  => "${dotfiles}/.gitconfig",
     require => Repository[$dotfiles]
   }
+
+  # ------- sublime text setup -------
+
+  repository { "${my}/Library/Application Support/Sublime Text 3/Packages/Theme - Soda":
+    source  => 'buymeasoda/soda-theme'
+  }
 }
