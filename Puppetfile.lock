@@ -49,6 +49,11 @@ GITHUBTARBALL
     git (1.2.5)
 
 GITHUBTARBALL
+  remote: boxen/puppet-gitx
+  specs:
+    gitx (1.2.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-hipchat
   specs:
     hipchat (1.0.7)
@@ -193,6 +198,7 @@ DEPENDENCIES
   elasticsearch (= 1.0.1)
   gcc (= 2.0.1)
   git (= 1.2.5)
+  gitx (= 1.2.0)
   hipchat (= 1.0.7)
   homebrew (= 1.4.1)
   hub (= 1.0.3)
