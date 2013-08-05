@@ -105,7 +105,7 @@ class people::fredoliveira {
 
   # amount of time (in ms) before key repeat 'presses'
   class { 'osx::global::key_repeat_rate':
-    rate => 2
+    rate => 1
   }
 
   property_list_key { 'Disable Gatekeeper':
