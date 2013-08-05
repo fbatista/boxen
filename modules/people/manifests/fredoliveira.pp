@@ -22,6 +22,7 @@ class people::fredoliveira {
   include java
   include elasticsearch
   include redis
+  include phantomjs
 
   $my = "/Users/${::boxen_user}"
 
@@ -41,6 +42,16 @@ class people::fredoliveira {
   repository { "${projects}/dashboard":
     source => 'DisruptionCorporation/dashboard.io',
     require => File[$projects]
+  }
+
+  class { 'ruby::global':
+    version => '1.9.3-p385'
+  }
+
+  $dashboard_ruby = "1.9.3-p385"
+
+  ruby::local { "${projects}/dashboard":
+    version => $dashboard_ruby
   }
 
   # ------- git --------
@@ -116,6 +127,12 @@ class people::fredoliveira {
   file { "${my}/.gitconfig":
     ensure  => link,
     target  => "${dotfiles}/.gitconfig",
+    require => Repository[$dotfiles]
+  }
+
+  file { "${my}/Library/Preferences/com.googlecode.iterm2.plist":
+    ensure  => link,
+    target  => "${dotfiles}/app_preferences/com.googlecode.iterm2.plist",
     require => Repository[$dotfiles]
   }
 

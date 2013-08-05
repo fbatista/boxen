@@ -114,6 +114,11 @@ GITHUBTARBALL
     osx (1.5.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-phantomjs
+  specs:
+    phantomjs (2.0.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-property_list_key
   specs:
     property_list_key (0.1.0)
@@ -212,6 +217,7 @@ DEPENDENCIES
   onepassword (= 1.0.2)
   openssl (= 1.0.0)
   osx (= 1.5.0)
+  phantomjs (= 2.0.2)
   prezto (= 1.0.1)
   property_list_key (= 0.1.0)
   redis (= 1.0.0)

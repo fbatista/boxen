@@ -59,3 +59,4 @@ github "source_code_pro",       "1.0.8", :repo => "fredoliveira/puppet-source_co
 github "notational_velocity",   "1.1.1"
 github "property_list_key",     "0.1.0"
 github "gitx",                  "1.2.0"
+github "phantomjs",             "2.0.2"
