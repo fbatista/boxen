@@ -83,26 +83,4 @@ node default {
       'gnu-tar'
     ]:
   }
-
-  #file { "${boxen::config::srcdir}/our-boxen":
-  #  ensure => link,
-  #  target => $boxen::config::repodir
-  #}
-
-  include iterm2::dev
-  include sequel_pro
-  include skype
-  include onepassword
-  include transmit
-  include dropbox
-  include redis
-  include chrome
-  include mysql
-  include java
-  include elasticsearch
-  include zsh
-  include prezto
-  include hipchat
-  include textexpander
-  include droplr
 }
