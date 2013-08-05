@@ -12,6 +12,7 @@ class people::fredoliveira {
   include sublime_text_3
   include source_code_pro
   include notational_velocity::nvalt
+  include vlc
 
   include zsh
   include prezto
@@ -105,7 +106,7 @@ class people::fredoliveira {
 
   # amount of time (in ms) before key repeat 'presses'
   class { 'osx::global::key_repeat_rate':
-    rate => 1
+    rate => 2
   }
 
   property_list_key { 'Disable Gatekeeper':
