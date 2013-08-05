@@ -40,7 +40,7 @@ class people::fredoliveira {
     require => File[$projects]
   }
 
-  file { "${my}/.zpreztorc":
+  file { "${my}/.zprezto/runcoms/zpreztorc":
     ensure  => link,
     target  => "${dotfiles}/.zpreztorc",
     require => Repository[$dotfiles]
