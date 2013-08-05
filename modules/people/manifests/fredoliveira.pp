@@ -31,6 +31,8 @@ class people::fredoliveira {
     target => $boxen::config::repodir
   }
 
+  # ------- dotfiles ------
+
   $dotfiles = "${projects}/dotfiles"
 
   repository { $dotfiles:
@@ -38,9 +40,15 @@ class people::fredoliveira {
     require => File[$projects]
   }
 
-  #file { "${home}/.zshrc":
-  #  ensure  => link,
-  #  target  => "${dotfiles_dir}/.zshrc",
-  #  require => Repository[$dotfiles_dir]
-  #}
+  file { "${home}/.zpreztorc":
+    ensure  => link,
+    target  => "${dotfiles_dir}/.zpreztorc",
+    require => Repository[$dotfiles_dir]
+  }
+
+  file { "${home}/.gitconfig":
+    ensure  => link,
+    target  => "${dotfiles_dir}/.gitconfig",
+    require => Repository[$dotfiles_dir]
+  }
 }
