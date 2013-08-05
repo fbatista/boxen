@@ -42,13 +42,13 @@ class people::fredoliveira {
 
   file { "${home}/.zpreztorc":
     ensure  => link,
-    target  => "${dotfiles_dir}/.zpreztorc",
-    require => Repository[$dotfiles_dir]
+    target  => "${dotfiles}/.zpreztorc",
+    require => Repository[$dotfiles]
   }
 
   file { "${home}/.gitconfig":
     ensure  => link,
-    target  => "${dotfiles_dir}/.gitconfig",
-    require => Repository[$dotfiles_dir]
+    target  => "${dotfiles}/.gitconfig",
+    require => Repository[$dotfiles]
   }
 }
