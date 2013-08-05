@@ -16,6 +16,7 @@ class people::fredoliveira {
   include zsh
   include prezto
 
+  include gitx::dev
   include sequel_pro
   include mysql
   include java
@@ -23,6 +24,9 @@ class people::fredoliveira {
   include redis
 
   $my = "/Users/${::boxen_user}"
+
+  # ------- projects folder ------
+
   $projects = "${my}/Projects"
 
   file { $projects:
@@ -32,6 +36,66 @@ class people::fredoliveira {
   file { "${projects}/boxen":
     ensure => link,
     target => $boxen::config::repodir
+  }
+
+  repository { "${projects}/dashboard":
+    source => 'DisruptionCorporation/dashboard.io',
+    require => File[$projects]
+  }
+
+  # ------- git --------
+
+  git::config::global{ 'user.name':
+    value => 'Fred Oliveira',
+  }
+
+  git::config::global { 'alias.lg':
+    value => "log --pretty=format:'%C(yellow)%h%C(reset) %s %C(cyan)%cr%C(reset) %C(blue)%an%C(reset) %C(green)%d%C(reset)' --graph --date-order",  }
+
+  git::config::global { 'alias.review':
+    value => 'log -p --reverse -M -C -C --patience --no-prefix',
+  }
+
+  git::config::global{ 'user.email':
+    value => 'fred@helloform.com',
+  }
+
+  git::config::global{ 'color.ui':
+    value => 'auto',
+  }
+
+  git::config::global { 'alias.ll':
+    value => 'log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat',
+  }
+
+  git::config::global { 'alias.dlc':
+    value => 'diff --cached HEAD^',
+  }
+
+  # ------- osx setup ------  
+
+  include osx::global::disable_key_press_and_hold
+  include osx::global::enable_keyboard_control_access
+  include osx::global::expand_print_dialog
+  include osx::global::expand_save_dialog
+  include osx::finder::unhide_library
+  include osx::no_network_dsstores
+
+  # amount of time (in ms) before a key starts repeating
+  class { 'osx::global::key_repeat_delay':
+    delay => 10
+  }
+
+  # amount of time (in ms) before key repeat 'presses'
+  class { 'osx::global::key_repeat_rate':
+    rate => 2
+  }
+
+  property_list_key { 'Disable Gatekeeper':
+    ensure => present,
+    path   => '/var/db/SystemPolicy-prefs.plist',
+    key    => 'enabled',
+    value  => 'no',
   }
 
   # ------- dotfiles ------
