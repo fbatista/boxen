@@ -19,9 +19,9 @@ class people::fredoliveira {
   include gitx::dev
   include sequel_pro
   include mysql
+  include redis
   include java
   include elasticsearch
-  include redis
   include phantomjs
 
   $my = "/Users/${::boxen_user}"
@@ -44,6 +44,8 @@ class people::fredoliveira {
     require => File[$projects]
   }
 
+  # ------- ruby + phantomjs --------
+
   class { 'ruby::global':
     version => '1.9.3-p385'
   }
@@ -52,6 +54,10 @@ class people::fredoliveira {
 
   ruby::local { "${projects}/dashboard":
     version => $dashboard_ruby
+  }
+
+  phantomjs::local { "${projects}/dashboard":
+    version => '1.9.0'
   }
 
   # ------- git --------
