@@ -40,13 +40,13 @@ class people::fredoliveira {
     require => File[$projects]
   }
 
-  file { "${home}/.zpreztorc":
+  file { "${my}/.zpreztorc":
     ensure  => link,
     target  => "${dotfiles}/.zpreztorc",
     require => Repository[$dotfiles]
   }
 
-  file { "${home}/.gitconfig":
+  file { "${my}/.gitconfig":
     ensure  => link,
     target  => "${dotfiles}/.gitconfig",
     require => Repository[$dotfiles]
