@@ -37,6 +37,8 @@ github "xquartz",    "1.1.0"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 
+github "java", "1.1.2"
+github "osx", "1.5.0"
 github "iterm2", 	"1.0.3"
 github "sequel_pro", "1.0.0"
 github "skype", "1.0.3"
@@ -51,3 +53,4 @@ github "zsh", "1.0.0"
 github "hipchat", "1.0.7"
 github "textexpander", "1.0.0"
 github "droplr", "1.0.1"
+github "prezto", "1.0.1", :repo => "archfear/puppet-prezto"

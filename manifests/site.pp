@@ -98,8 +98,10 @@ node default {
   include redis
   include chrome
   include mysql
+  include java
   include elasticsearch
   include zsh
+  include prezto
   include hipchat
   include textexpander
   include droplr
