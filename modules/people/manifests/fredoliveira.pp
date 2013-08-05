@@ -9,6 +9,8 @@ class people::fredoliveira {
   include textexpander
   include droplr
   include hipchat
+  include sublime_text_3
+  include source_code_pro
 
   include zsh
   include prezto
@@ -54,7 +56,23 @@ class people::fredoliveira {
 
   # ------- sublime text setup -------
 
-  repository { "${my}/Library/Application Support/Sublime Text 3/Packages/Theme - Soda":
-    source  => 'buymeasoda/soda-theme'
+  sublime_text_3::package { 'Theme - Soda':
+    source => 'buymeasoda/soda-theme'
+  }
+
+  sublime_text_3::package { 'Color Schemes by carlcalderon':
+    source => 'carlcalderon/sublime-color-schemes'
+  }
+
+  sublime_text_3::package { 'Emmet':
+    source => 'sergeche/emmet-sublime'
+  }
+
+  $sublime_packages_dir = "${my}/Library/Application Support/Sublime Text 3/Packages"
+
+  file { "${sublime_packages_dir}/User/Preferences.sublime-settings":
+    ensure  => link,
+    target  => "${dotfiles}/Preferences.sublime-settings",
+    require => Repository[$dotfiles]
   }
 }
