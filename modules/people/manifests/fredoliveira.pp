@@ -116,6 +116,13 @@ class people::fredoliveira {
     value  => 'no',
   }
 
+  boxen::osx_defaults { 'Disable Dashboard':
+    key    => 'mcx-disabled',
+    domain => 'com.apple.dashboard',
+    value  => 'YES',
+    user   => "${::luser}",
+  }
+
   # ------- dotfiles ------
 
   $dotfiles = "${projects}/dotfiles"
