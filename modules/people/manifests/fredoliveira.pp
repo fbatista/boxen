@@ -25,6 +25,12 @@ class people::fredoliveira {
   include elasticsearch
   include phantomjs
 
+  package {
+    [
+      'git-flow'
+    ]:
+  }
+
   $my = "/Users/${::boxen_user}"
 
   # ------- projects folder ------
