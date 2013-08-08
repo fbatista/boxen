@@ -159,6 +159,16 @@ GITHUBTARBALL
     transmit (1.0.1)
 
 GITHUBTARBALL
+  remote: boxen/puppet-vagrant
+  specs:
+    vagrant (2.0.10)
+
+GITHUBTARBALL
+  remote: boxen/puppet-virtualbox
+  specs:
+    virtualbox (1.0.5)
+
+GITHUBTARBALL
   remote: boxen/puppet-vlc
   specs:
     vlc (1.0.3)
@@ -236,6 +246,8 @@ DEPENDENCIES
   sudo (= 1.0.0)
   textexpander (= 1.0.0)
   transmit (= 1.0.1)
+  vagrant (= 2.0.10)
+  virtualbox (= 1.0.5)
   vlc (= 1.0.3)
   xquartz (= 1.1.0)
   zsh (= 1.0.0)

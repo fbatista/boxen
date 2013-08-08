@@ -24,6 +24,10 @@ class people::fredoliveira {
   include java
   include elasticsearch
   include phantomjs
+  include virtualbox
+  include vagrant
+
+  vagrant::plugin { 'vagrant-aws': }
 
   package {
     [
