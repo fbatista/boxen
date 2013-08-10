@@ -31,7 +31,8 @@ class people::fredoliveira {
 
   package {
     [
-      'git-flow'
+      'git-flow',
+      'wget'
     ]:
   }
 
@@ -162,8 +163,12 @@ class people::fredoliveira {
 
   # ------- sublime text setup -------
 
-  sublime_text_3::package { 'Package Control':
-    source => 'wbond/sublime_package_control'
+  $sublime_installed_packages_dir = "${my}/Library/Application Support/Sublime Text 3/Installed Packages"
+  $sublime_packages_dir = "${my}/Library/Application Support/Sublime Text 3/Packages"
+
+  exec { "cd \"${sublime_installed_packages_dir}\" && wget 'https://sublime.wbond.net/Package Control.sublime-package'":
+    creates  =>  "${sublime_installed_packages_dir}/Package Control.sublime-package",
+    require => Package["wget"]
   }
 
   sublime_text_3::package { 'Theme - Soda':
@@ -177,8 +182,6 @@ class people::fredoliveira {
   sublime_text_3::package { 'Emmet':
     source => 'sergeche/emmet-sublime'
   }
-
-  $sublime_packages_dir = "${my}/Library/Application Support/Sublime Text 3/Packages"
 
   file { "${sublime_packages_dir}/User/Preferences.sublime-settings":
     ensure  => link,
