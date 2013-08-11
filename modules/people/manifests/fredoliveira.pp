@@ -1,5 +1,7 @@
 class people::fredoliveira {
   include iterm2::dev
+  include zsh
+  include prezto
 
   include chrome
   include skype
@@ -13,9 +15,6 @@ class people::fredoliveira {
   include source_code_pro
   include notational_velocity::nvalt
   include vlc
-
-  include zsh
-  include prezto
 
   include gitx::dev
   include sequel_pro
@@ -31,8 +30,7 @@ class people::fredoliveira {
 
   package {
     [
-      'git-flow',
-      'wget'
+      'git-flow'
     ]:
   }
 
@@ -143,6 +141,12 @@ class people::fredoliveira {
     require => File[$projects]
   }
 
+  file { "${my}/.zprezto/runcoms/zshrc":
+    ensure  => link,
+    target  => "${dotfiles}/.zshrc",
+    require => Repository[$dotfiles]
+  }
+
   file { "${my}/.zprezto/runcoms/zpreztorc":
     ensure  => link,
     target  => "${dotfiles}/.zpreztorc",
@@ -166,9 +170,8 @@ class people::fredoliveira {
   $sublime_installed_packages_dir = "${my}/Library/Application Support/Sublime Text 3/Installed Packages"
   $sublime_packages_dir = "${my}/Library/Application Support/Sublime Text 3/Packages"
 
-  exec { "cd \"${sublime_installed_packages_dir}\" && wget 'https://sublime.wbond.net/Package Control.sublime-package'":
-    creates  =>  "${sublime_installed_packages_dir}/Package Control.sublime-package",
-    require => Package["wget"]
+  exec { "cd \"${sublime_installed_packages_dir}\" && curl -O 'https://sublime.wbond.net/Package Control.sublime-package'":
+    creates  =>  "${sublime_installed_packages_dir}/Package Control.sublime-package"
   }
 
   sublime_text_3::package { 'Theme - Soda':
