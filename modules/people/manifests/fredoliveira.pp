@@ -15,6 +15,7 @@ class people::fredoliveira {
   include source_code_pro
   include notational_velocity::nvalt
   include vlc
+  include unarchiver
 
   include gitx::dev
   include sequel_pro
