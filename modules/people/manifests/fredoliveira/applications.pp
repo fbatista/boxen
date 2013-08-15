@@ -30,7 +30,8 @@ class people::fredoliveira::applications {
   # homebrew packages
   package {
     [
-      'git-flow'
+      'git-flow',
+      'unrar'
     ]:
   }
 
