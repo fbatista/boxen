@@ -56,6 +56,10 @@ class people::fredoliveira::applications {
     source => 'sergeche/emmet-sublime'
   }
 
+  sublime_text_3::package { 'GitGutter':
+    source => 'jisaacks/GitGutter'
+  }
+
   file { "${sublime_packages_dir}/User/Preferences.sublime-settings":
     ensure  => link,
     target  => "${people::fredoliveira::params::my_dotfiles}/Preferences.sublime-settings",
