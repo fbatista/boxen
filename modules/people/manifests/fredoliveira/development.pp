@@ -1,8 +1,4 @@
 class people::fredoliveira::development {
-  file { $people::fredoliveira::params::my_projects:
-    ensure => directory
-  }
-
   file { "${people::fredoliveira::params::my_projects}/boxen":
     ensure => link,
     target => $boxen::config::repodir
