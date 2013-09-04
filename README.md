@@ -13,7 +13,3 @@ script/boxen
 ```
 script/boxen --no-fde
 ```
-
-# TODO
-
-* Move to a fully dynamic .gitconfig

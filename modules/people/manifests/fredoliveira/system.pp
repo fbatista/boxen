@@ -49,12 +49,6 @@ class people::fredoliveira::system {
     require => Repository[$people::fredoliveira::params::my_dotfiles]
   }
 
-  file { "${people::fredoliveira::params::my_homedir}/.gitconfig":
-    ensure  => link,
-    target  => "${people::fredoliveira::params::my_dotfiles}/.gitconfig",
-    require => Repository[$people::fredoliveira::params::my_dotfiles]
-  }
-
   file { "${people::fredoliveira::params::my_homedir}/Library/Preferences/com.googlecode.iterm2.plist":
     ensure  => link,
     target  => "${people::fredoliveira::params::my_dotfiles}/app_preferences/com.googlecode.iterm2.plist",
@@ -88,5 +82,25 @@ class people::fredoliveira::system {
 
   git::config::global { 'alias.dlc':
     value => 'diff --cached HEAD^',
+  }
+
+  git::config::global { 'alias.st':
+    value => 'status',
+  }
+
+  git::config::global { 'alias.co':
+    value => 'checkout',
+  }  
+
+  git::config::global { 'alias.ci':
+    value => 'commit',
+  }
+
+  git::config::global { 'alias.br':
+    value => 'branch',
+  }
+
+  git::config::global { 'alias.llog':
+    value => 'log --date=local',
   }
 }
