@@ -31,7 +31,8 @@ class people::fredoliveira::applications {
   package {
     [
       'git-flow',
-      'unrar'
+      'unrar',
+      'python'
     ]:
   }
 

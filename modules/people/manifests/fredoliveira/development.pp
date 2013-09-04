@@ -4,8 +4,13 @@ class people::fredoliveira::development {
     target => $boxen::config::repodir
   }
 
-  repository { "${people::fredoliveira::params::my_projects}/dashboard":
+  repository { "${people::fredoliveira::params::my_projects}/disruption/dashboard.io":
     source => 'DisruptionCorporation/dashboard.io',
+    require => File[$people::fredoliveira::params::my_projects]
+  }
+
+  repository { "${people::fredoliveira::params::my_projects}/disruption/data.dashboard.io":
+    source => 'DisruptionCorporation/data.dashboard.io',
     require => File[$people::fredoliveira::params::my_projects]
   }
 
