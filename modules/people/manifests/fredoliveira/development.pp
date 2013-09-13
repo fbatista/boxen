@@ -21,6 +21,7 @@ class people::fredoliveira::development {
   }
 
   # ------- vagrant --------
+  #vagrant::plugin { 'vagrant-aws': }
 
-  vagrant::plugin { 'vagrant-aws': }
+  class { 'nodejs::global': version => 'v0.10.13' }
 }

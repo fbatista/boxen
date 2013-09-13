@@ -24,8 +24,8 @@ class people::fredoliveira::applications {
   include java
   include elasticsearch
   include phantomjs
-  include virtualbox
-  include vagrant
+  #include virtualbox
+  #include vagrant
 
   # homebrew packages
   package {
