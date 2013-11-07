@@ -1,4 +1,4 @@
-class people::fredoliveira::applications {
+class people::fbatista::applications {
   include iterm2::dev
   include zsh
   include prezto
@@ -38,8 +38,8 @@ class people::fredoliveira::applications {
 
   # ------- sublime text setup -------
 
-  $sublime_installed_packages_dir = "${people::fredoliveira::params::my_homedir}/Library/Application Support/Sublime Text 3/Installed Packages"
-  $sublime_packages_dir = "${people::fredoliveira::params::my_homedir}/Library/Application Support/Sublime Text 3/Packages"
+  $sublime_installed_packages_dir = "${people::fbatista::params::my_homedir}/Library/Application Support/Sublime Text 3/Installed Packages"
+  $sublime_packages_dir = "${people::fbatista::params::my_homedir}/Library/Application Support/Sublime Text 3/Packages"
 
   exec { "cd \"${sublime_installed_packages_dir}\" && curl -O 'https://sublime.wbond.net/Package Control.sublime-package'":
     creates  =>  "${sublime_installed_packages_dir}/Package Control.sublime-package"
@@ -63,7 +63,7 @@ class people::fredoliveira::applications {
 
   file { "${sublime_packages_dir}/User/Preferences.sublime-settings":
     ensure  => link,
-    target  => "${people::fredoliveira::params::my_dotfiles}/Preferences.sublime-settings",
-    require => Repository[$people::fredoliveira::params::my_dotfiles]
+    target  => "${people::fbatista::params::my_dotfiles}/Preferences.sublime-settings",
+    require => Repository[$people::fbatista::params::my_dotfiles]
   }
 }

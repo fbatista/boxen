@@ -1,4 +1,4 @@
-class people::fredoliveira::system {
+class people::fbatista::system {
   include osx::global::disable_key_press_and_hold
   include osx::global::enable_keyboard_control_access
   include osx::global::expand_print_dialog
@@ -32,27 +32,27 @@ class people::fredoliveira::system {
 
   # ------- dotfiles ------
 
-  repository { $people::fredoliveira::params::my_dotfiles:
-    source => 'fredoliveira/dotfiles',
-    require => File[$people::fredoliveira::params::my_projects]
+  repository { $people::fbatista::params::my_dotfiles:
+    source => 'fbatista/dotfiles',
+    require => File[$people::fbatista::params::my_projects]
   }
 
-  file { "${people::fredoliveira::params::my_homedir}/.zprezto/runcoms/zshrc":
+  file { "${people::fbatista::params::my_homedir}/.zprezto/runcoms/zshrc":
     ensure  => link,
-    target  => "${people::fredoliveira::params::my_dotfiles}/.zshrc",
-    require => Repository[$people::fredoliveira::params::my_dotfiles]
+    target  => "${people::fbatista::params::my_dotfiles}/.zshrc",
+    require => Repository[$people::fbatista::params::my_dotfiles]
   }
 
-  file { "${people::fredoliveira::params::my_homedir}/.zprezto/runcoms/zpreztorc":
+  file { "${people::fbatista::params::my_homedir}/.zprezto/runcoms/zpreztorc":
     ensure  => link,
-    target  => "${people::fredoliveira::params::my_dotfiles}/.zpreztorc",
-    require => Repository[$people::fredoliveira::params::my_dotfiles]
+    target  => "${people::fbatista::params::my_dotfiles}/.zpreztorc",
+    require => Repository[$people::fbatista::params::my_dotfiles]
   }
 
-  file { "${people::fredoliveira::params::my_homedir}/Library/Preferences/com.googlecode.iterm2.plist":
+  file { "${people::fbatista::params::my_homedir}/Library/Preferences/com.googlecode.iterm2.plist":
     ensure  => link,
-    target  => "${people::fredoliveira::params::my_dotfiles}/app_preferences/com.googlecode.iterm2.plist",
-    require => Repository[$people::fredoliveira::params::my_dotfiles]
+    target  => "${people::fbatista::params::my_dotfiles}/app_preferences/com.googlecode.iterm2.plist",
+    require => Repository[$people::fbatista::params::my_dotfiles]
   }
 
   # ------- git --------
