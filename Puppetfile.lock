@@ -184,22 +184,22 @@ GITHUBTARBALL
     zsh (1.0.0)
 
 GITHUBTARBALL
-  remote: fredoliveira/puppet-redis
+  remote: fbatista/puppet-redis
   specs:
     redis (1.0.1)
 
 GITHUBTARBALL
-  remote: fredoliveira/puppet-source_code_pro
+  remote: fbatista/puppet-source_code_pro
   specs:
     source_code_pro (1.0.8)
 
 GITHUBTARBALL
-  remote: fredoliveira/puppet-sublime_text_3
+  remote: fbatista/puppet-sublime_text_3
   specs:
     sublime_text_3 (1.1.3)
 
 GITHUBTARBALL
-  remote: fredoliveira/puppet-unarchiver
+  remote: fbatista/puppet-unarchiver
   specs:
     unarchiver (1.2.0)
 
