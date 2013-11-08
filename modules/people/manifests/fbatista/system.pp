@@ -58,7 +58,7 @@ class people::fbatista::system {
   # ------- git --------
 
   git::config::global{ 'user.name':
-    value => 'Fred Oliveira',
+    value => 'Fábio Batista',
   }
 
   git::config::global { 'alias.lg':
@@ -69,7 +69,7 @@ class people::fbatista::system {
   }
 
   git::config::global{ 'user.email':
-    value => 'fred@helloform.com',
+    value => 'fbatista@gmail.com',
   }
 
   git::config::global{ 'color.ui':
