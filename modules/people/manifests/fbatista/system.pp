@@ -16,13 +16,6 @@ class people::fbatista::system {
     rate => 2
   }
 
-  property_list_key { 'Disable Gatekeeper':
-    ensure => present,
-    path   => '/var/db/SystemPolicy-prefs.plist',
-    key    => 'enabled',
-    value  => 'no',
-  }
-
   boxen::osx_defaults { 'Disable Dashboard':
     key    => 'mcx-disabled',
     domain => 'com.apple.dashboard',
