@@ -34,11 +34,6 @@ GITHUBTARBALL
     git (2.7.5)
 
 GITHUBTARBALL
-  remote: boxen/puppet-go
-  specs:
-    go (2.1.0)
-
-GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
     homebrew (1.11.2)
@@ -62,11 +57,6 @@ GITHUBTARBALL
   remote: boxen/puppet-mysql
   specs:
     mysql (2.0.1)
-
-GITHUBTARBALL
-  remote: boxen/puppet-nginx
-  specs:
-    nginx (1.4.4)
 
 GITHUBTARBALL
   remote: boxen/puppet-nodejs
@@ -160,7 +150,6 @@ DEPENDENCIES
   foreman (= 1.2.0)
   gcc (= 2.2.0)
   git (= 2.7.5)
-  go (= 2.1.0)
   homebrew (= 1.11.2)
   hub (= 1.4.0)
   inifile (= 1.1.1)
@@ -168,7 +157,6 @@ DEPENDENCIES
   java (= 1.8.2)
   module_data (= 0.0.3)
   mysql (= 2.0.1)
-  nginx (= 1.4.4)
   nodejs (= 4.0.1)
   onepassword (= 1.1.5)
   openssl (= 1.0.0)
